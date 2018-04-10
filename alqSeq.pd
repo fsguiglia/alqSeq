@@ -1,0 +1,23 @@
+#N canvas -8 -8 1366 695 10;
+#X obj 96 27 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
+;
+#X obj 96 97 s click;
+#X text 811 97 alqSeq v0.01. Developed for alquibots@ArCiTec. Fabian
+Sguiglia \, 2018;
+#X text 173 96 strip object listens for sends on click;
+#X text 174 26 start/stop;
+#X text 363 216 strip. Usage: |strip x y z|;
+#X text 592 215 x: number of steps y: mul z: add;
+#X floatatom 95 475 5 0 0 0 - - -, f 5;
+#X text 142 477 if step value > 0: output value = step value * mul
++ add;
+#X obj 95 216 strip 4 10 100;
+#X text 33 212 toggle shows values;
+#X obj 96 64 metro 600;
+#X msg 95 167 0.5 1 -1 0.3;
+#X text 195 165 List for values. Negative doesnt trigger step. Shoud
+be normalized.;
+#X connect 0 0 11 0;
+#X connect 9 0 7 0;
+#X connect 11 0 1 0;
+#X connect 12 0 9 0;
